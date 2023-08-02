@@ -701,6 +701,13 @@ public class Launcher
 				hash = null;
 			}
 
+			if (Objects.equals(artifact.getName(), "gameNonObfuscated-0.0.1.jar")) {
+				continue;
+			}
+			if (Objects.equals(artifact.getPath(), "https://repo.maven.apache.org/maven2/com/client/game/0.0.1/game-0.0.1.jar")) {
+				continue;
+			}
+
 			if (Objects.equals(hash, artifact.getHash()))
 			{
 				log.debug("Hash for {} up to date", artifact.getName());
@@ -855,6 +862,7 @@ public class Launcher
 		{
 			String expectedHash = artifact.getHash();
 			String fileHash;
+
 			try
 			{
 				fileHash = hash(new File(location, artifact.getName()));
