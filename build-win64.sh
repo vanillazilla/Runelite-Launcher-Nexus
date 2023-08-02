@@ -40,4 +40,5 @@ sha256sum native-win64/Nexus.exe
 
 dumpbin //HEADERS native-win64/Nexus.exe
 
-# We use the filtered iss
+# We use the filtered iss file
+iscc target/filtered-resources/app.iss
