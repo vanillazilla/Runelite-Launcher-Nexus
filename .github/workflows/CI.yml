@@ -73,7 +73,7 @@ jobs:
     - name: AArch64 installer
       shell: bash
       run: ./build-win-aarch64.sh
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: windows
         path: |
@@ -108,12 +108,12 @@ jobs:
       run: chmod +x ./build-linux-aarch64.sh
     - name: linux-aarch64
       run: ./build-linux-aarch64.sh
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: jar
         path: target/Nexus.jar
         if-no-files-found: error
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: linux
         path: |
@@ -155,7 +155,7 @@ jobs:
       run: chmod +x ./build-osx-aarch64.sh
     - name: macos-aarch64
       run: ./build-osx-aarch64.sh
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: macos
         path: |
