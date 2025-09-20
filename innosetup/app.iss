@@ -1,7 +1,7 @@
 [Setup]
-AppName=Nexus Launcher
-AppPublisher=Nexus
-UninstallDisplayName=Nexus
+AppName=Nexus Reborn Launcher
+AppPublisher=Nexus Reborn
+UninstallDisplayName=Nexus Reborn
 AppVersion=${project.version}
 AppSupportURL=https://nexus.net/
 DefaultDirName={localappdata}\Nexus
