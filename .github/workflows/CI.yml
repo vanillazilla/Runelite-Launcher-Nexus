@@ -111,13 +111,6 @@ jobs:
         name: jar
         path: target/Nexus.jar
         if-no-files-found: error
-    - uses: actions/upload-artifact@v4
-      with:
-        name: linux
-        path: |
-          native-linux-x86_64/Nexus.AppImage
-          native-linux-aarch64/Nexus-aarch64.AppImage
-        if-no-files-found: error
   macos:
     runs-on: macos-13
     steps:
