@@ -1,10 +1,10 @@
 [Setup]
-AppName=Nexus Launcher
-AppPublisher=Nexus
-UninstallDisplayName=Nexus
+AppName=Carnage Launcher
+AppPublisher=Carnage
+UninstallDisplayName=Carnage
 AppVersion=${project.version}
-AppSupportURL=https://nexus.net/
-DefaultDirName={localappdata}\Nexus
+AppSupportURL=https://carnage.horrordev.com/
+DefaultDirName={localappdata}\Carnage
 
 ; ~30 mb for the repo the launcher downloads
 ExtraDiskSpaceRequired=30000000
@@ -14,43 +14,43 @@ PrivilegesRequired=lowest
 WizardSmallImageFile=${basedir}/app_small.bmp
 WizardImageFile=${basedir}/left.bmp
 SetupIconFile=${basedir}/app.ico
-UninstallDisplayIcon={app}\Nexus.exe
+UninstallDisplayIcon={app}\Carnage.exe
 
 Compression=lzma2
 SolidCompression=yes
 
 OutputDir=${basedir}
-OutputBaseFilename=NexusSetupAArch64
+OutputBaseFilename=CarnageSetupAArch64
 
 [Tasks]
 Name: DesktopIcon; Description: "Create a &desktop icon";
 
 [Files]
-Source: "${basedir}\native-win-aarch64\Nexus.exe"; DestDir: "{app}"
-Source: "${basedir}\native-win-aarch64\Nexus.jar"; DestDir: "{app}"
+Source: "${basedir}\native-win-aarch64\Carnage.exe"; DestDir: "{app}"
+Source: "${basedir}\native-win-aarch64\Carnage.jar"; DestDir: "{app}"
 Source: "${basedir}\native\buildaarch64\Release\launcher_aarch64.dll"; DestDir: "{app}"
 Source: "${basedir}\native-win-aarch64\config.json"; DestDir: "{app}"
 Source: "${basedir}\native-win-aarch64\jre\*"; DestDir: "{app}\jre"; Flags: recursesubdirs
 
 [Icons]
 ; start menu
-Name: "{userprograms}\Nexus\Nexus"; Filename: "{app}\Nexus.exe"
-Name: "{userprograms}\Nexus\Nexus (configure)"; Filename: "{app}\Nexus.exe"; Parameters: "--configure"
-Name: "{userprograms}\Nexus\Nexus (safe mode)"; Filename: "{app}\Nexus.exe"; Parameters: "--safe-mode"
-Name: "{userdesktop}\Nexus"; Filename: "{app}\Nexus.exe"; Tasks: DesktopIcon
+Name: "{userprograms}\Carnage\Carnage"; Filename: "{app}\Carnage.exe"
+Name: "{userprograms}\Carnage\Carnage (configure)"; Filename: "{app}\Carnage.exe"; Parameters: "--configure"
+Name: "{userprograms}\Carnage\Carnage (safe mode)"; Filename: "{app}\Carnage.exe"; Parameters: "--safe-mode"
+Name: "{userdesktop}\Carnage"; Filename: "{app}\Carnage.exe"; Tasks: DesktopIcon
 
 [Run]
-Filename: "{app}\Nexus.exe"; Parameters: "--postinstall"; Flags: nowait
-Filename: "{app}\Nexus.exe"; Description: "&Open Nexus"; Flags: postinstall skipifsilent nowait
+Filename: "{app}\Carnage.exe"; Parameters: "--postinstall"; Flags: nowait
+Filename: "{app}\Carnage.exe"; Description: "&Open Carnage"; Flags: postinstall skipifsilent nowait
 
 [InstallDelete]
 ; Delete the old jvm so it doesn't try to load old stuff with the new vm and crash
 Type: filesandordirs; Name: "{app}\jre"
 ; previous shortcut
-Type: files; Name: "{userprograms}\Nexus.lnk"
+Type: files; Name: "{userprograms}\Carnage.lnk"
 
 [UninstallDelete]
-Type: filesandordirs; Name: "{%USERPROFILE}\.nexus\repository2"
+Type: filesandordirs; Name: "{%USERPROFILE}\.carnage\repository2"
 ; includes install_id, settings, etc
 Type: filesandordirs; Name: "{app}"
 
